@@ -1,3 +1,5 @@
+                # "Medical billing"
+
 # Step 1: Gather patient information
 patient_name = input("Enter the patient's name: ")
 patient_id = input("Enter the patient's ID: ")
