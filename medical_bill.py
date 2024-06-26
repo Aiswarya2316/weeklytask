@@ -36,23 +36,13 @@ medical_bill = consultation_fee + medication_cost + lab_tests_cost
 
 # Simulate login
 print("Please log in to check your medical bill.")
-
-# Prompt user for username
 username = input("Enter your username: ")
-
-# Check username
 if username == stored_username:
-    # Prompt user for password
     password = input("Enter your password: ")
-    
-    # Check password
     if password == stored_password:
-        # Successful login
         print("Login successful!")
         print(f"Your medical bill is ${medical_bill}")
     else:
-        # Incorrect password
         print("Incorrect password. Access denied.")
 else:
-    # Incorrect username
     print("Username not found. Access denied.")
