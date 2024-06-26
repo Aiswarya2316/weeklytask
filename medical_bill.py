@@ -46,3 +46,42 @@ if username == stored_username:
         print("Incorrect password. Access denied.")
 else:
     print("Username not found. Access denied.")
+
+
+    # Initialize an empty list to store patient data
+patients = []
+
+# Enter details for multiple patients
+num_patients = int(input("Enter the number of patients: "))
+
+for _ in range(num_patients):
+    # Initialize a dictionary to store a single patient's data
+    patient = {}
+
+    # Collect patient information
+    patient['Patient Name'] = input("Enter patient's name: ")
+    patient['Age'] = int(input("Enter patient's age: "))
+    patient['Gender'] = input("Enter patient's gender (M/F): ")
+    patient['Contact Number'] = input("Enter patient's contact number: ")
+
+    # Collect bill information
+    patient['Bill Number'] = input("Enter bill number: ")
+    patient['Date of Service'] = input("Enter date of service (YYYY-MM-DD): ")
+    patient['Service Description'] = input("Enter service description: ")
+    patient['Amount'] = float(input("Enter amount: "))
+
+    # Add the patient's data to the patients list
+    patients.append(patient)
+
+# Display all collected patient data
+print("\nCollected Medical Bill Information:")
+for idx, patient in enumerate(patients, 1):
+    print(f"\nPatient {idx}:")
+    print(f"Name: {patient['Patient Name']}")
+    print(f"Age: {patient['Age']}")
+    print(f"Gender: {patient['Gender']}")
+    print(f"Contact Number: {patient['Contact Number']}")
+    print(f"Bill Number: {patient['Bill Number']}")
+    print(f"Date of Service: {patient['Date of Service']}")
+    print(f"Service Description: {patient['Service Description']}")
+    print(f"Amount: {patient['Amount']}")
