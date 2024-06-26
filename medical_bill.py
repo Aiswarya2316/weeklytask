@@ -31,7 +31,8 @@ print("Total Bill: $", format(total_bill, '.2f'))
 # Predefined user credentials and bill
 stored_username = "user123"
 stored_password = "pass123"
-medical_bill = total_bill
+medical_bill = consultation_fee + medication_cost + lab_tests_cost 
+
 
 # Simulate login
 print("Please log in to check your medical bill.")
