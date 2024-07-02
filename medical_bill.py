@@ -7,8 +7,7 @@ while True:
     print("\nPlease select an option:")
     print("1. Register")
     print("2. Login")
-    print("3. Medical Bill")
-    print("4. Exit")
+    print("3. Exit")
 
     choice = int(input("Enter the number of your choice: "))
 
@@ -40,7 +39,11 @@ while True:
         else:
             print("\nInvalid Patient ID or Password.")
 
-    elif choice == 3:  
+    print("\nPlease select an option:")
+    print("1. Medical Bill")
+    print("2. Exit")
+    choice = int(input("Enter the number of your choice: "))
+    if choice==1:
         print("\n--- Medical Bill ---")
         if current_patient:
             print(f"Medical bill for {patients[current_patient]['name']}:")
@@ -50,7 +53,7 @@ while True:
         else:
             print("\nPlease log in to view the medical bill.")
 
-    elif choice == 4:  
+    elif choice == 2:  
         print("THANK YOU .............!")
         break
 

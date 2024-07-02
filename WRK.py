@@ -153,102 +153,17 @@
 #                 # or
 
 
-# L = [
-#     [0, 'admin'],
-#     ['reg', 'name', 'eng', 'mal', 'maths', 'bio', 'phy', 'che'],
-#     [12345, 'alal', 50, 40, 55, 34, 73, 47],
-#     [67890, 'aro', 43, 65, 45, 51, 33, 63]
-# ]
-
-# while True:
-#     # Display the main menu
-#     print("\n1. Login")
-#     print("2. Cancel")
-#     choice = int(input("Enter your choice: "))
-
-#     if choice == 1:
-#         # User login
-#         reg = int(input("Enter register number: "))
-#         name = input("Enter name: ")
-        
-#         f = 0
-#         for student in L:
-#             if reg == student[0] and name == student[1]:
-#                 f = 1
-#                 print("You have successfully logged in.")
-                
-#                 if reg == 0 and name == 'admin':
-#                     # Admin menu
-#                     while True:
-#                         print("\nAdmin Menu")
-#                         print("1. Add Student")
-#                         print("2. View All Students")
-#                         print("3. Exit Admin Menu")
-#                         admin_choice = int(input("Enter your choice: "))
-                        
-#                         if admin_choice == 1:
-#                             # Add a new student
-#                             new_reg = int(input("Enter register number: "))
-#                             new_name = input("Enter student name: ")
-#                             new_eng = int(input("Enter mark in English: "))
-#                             new_mal = int(input("Enter mark in Malayalam: "))
-#                             new_maths = int(input("Enter mark in Maths: "))
-#                             new_bio = int(input("Enter mark in Biology: "))
-#                             new_phy = int(input("Enter mark in Physics: "))
-#                             new_che = int(input("Enter mark in Chemistry: "))
-#                             L.append([new_reg, new_name, new_eng, new_mal, new_maths, new_bio, new_phy, new_che])
-#                             print(f"Student {new_name} added successfully.")
-                        
-#                         elif admin_choice == 2:
-#                             # View all students
-#                             print("\nAll Students:")
-#                             print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
-#                                 "Reg No", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
-#                             print('-' * 80)
-#                             for student in L[2:]:  # Skip admin and headers
-#                                 print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
-#                                     student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
-                        
-#                         elif admin_choice == 3:
-#                             break
-                        
-#                         else:
-#                             print("Invalid choice. Please try again.")
-                
-#                 else:
-#                     # Display the logged-in student's marks
-#                     print("\nYour results are:")
-#                     print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
-#                         "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
-#                     print('-' * 60)
-#                     print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
-#                         student[2], student[3], student[4], student[5], student[6], student[7]))
-#                 break
-        
-#         if f == 0:
-#             print("ID not found.")
-    
-#     elif choice == 2:
-#         print("You have exited.")
-#         break
-    
-#     else:
-#         print("Invalid input! Please try again.")
-
-
-
-# List of students and their marks
 L = [
-    [000, 'admin'],
+    [0, 'admin'],
     ['reg', 'name', 'eng', 'mal', 'maths', 'bio', 'phy', 'che'],
     [12345, 'alal', 50, 40, 55, 34, 73, 47],
     [67890, 'aro', 43, 65, 45, 51, 33, 63]
 ]
 
 while True:
-    # Display the menu
+    # Display the main menu
     print("\n1. Login")
-    print("2. Exit")
+    print("2. Cancel")
     choice = int(input("Enter your choice: "))
 
     if choice == 1:
@@ -256,63 +171,235 @@ while True:
         reg = int(input("Enter register number: "))
         name = input("Enter name: ")
         
-        found = False
+        f = 0
         for student in L:
             if reg == student[0] and name == student[1]:
-                found = True
+                f = 1
                 print("You have successfully logged in.")
                 
-                # Display student marks
-                print("\nYour results are:")
-                print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
-                print('_' * 70)
-                print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+                if reg == 0 and name == 'admin':
+                    # Admin menu
+                    while True:
+                        print("\nAdmin Menu")
+                        print("1. Add Student")
+                        print("2. View All Students")
+                        print("3. Exit Admin Menu")
+                        admin_choice = int(input("Enter your choice: "))
+                        
+                        if admin_choice == 1:
+                            # Add a new student
+                            new_reg = int(input("Enter register number: "))
+                            new_name = input("Enter student name: ")
+                            new_eng = int(input("Enter mark in English: "))
+                            new_mal = int(input("Enter mark in Malayalam: "))
+                            new_maths = int(input("Enter mark in Maths: "))
+                            new_bio = int(input("Enter mark in Biology: "))
+                            new_phy = int(input("Enter mark in Physics: "))
+                            new_che = int(input("Enter mark in Chemistry: "))
+                            L.append([new_reg, new_name, new_eng, new_mal, new_maths, new_bio, new_phy, new_che])
+                            print(f"Student {new_name} added successfully.")
+                        
+                        elif admin_choice == 2:
+                            # View all students
+                            print("\nAll Students:")
+                            print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
+                                "Reg No", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+                            print('-' * 80)
+                            for student in L[2:]:  # Skip admin and headers
+                                print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
+                                    student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+                        
+                        elif admin_choice == 3:
+                            break
+                        
+                        else:
+                            print("Invalid choice. Please try again.")
+                
+                else:
+                    # Display the logged-in student's marks
+                    print("\nYour results are:")
+                    print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
+                        "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+                    print('-' * 60)
+                    print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
+                        student[2], student[3], student[4], student[5], student[6], student[7]))
                 break
         
-        if not found:
-            print("ID or name not found.")
+        if f == 0:
+            print("ID not found.")
     
     elif choice == 2:
         print("You have exited.")
         break
     
     else:
-        print("INVALID INPUT!")
+        print("Invalid input! Please try again.")
 
-    # Admin menu
-    if reg == 000 and name == 'admin':
-        while True:
-            print("\nAdmin Menu:")
-            print("1. Add student")
-            print("2. View all students")
-            print("3. Logout")
-            admin_choice = int(input("Enter your choice: "))
-            
-            if admin_choice == 1:
-                # Add a new student
-                reg = int(input("Enter register number: "))
-                name = input("Enter student name: ")
-                eng = int(input("Enter mark in English: "))
-                mal = int(input("Enter mark in Malayalam: "))
-                maths = int(input("Enter mark in Maths: "))
-                bio = int(input("Enter mark in Biology: "))
-                phy = int(input("Enter mark in Physics: "))
-                che = int(input("Enter mark in Chemistry: "))
+
+
+# List of students and their marks
+# L = [
+#     [000, 'admin'],
+#     ['reg', 'name', 'eng', 'mal', 'maths', 'bio', 'phy', 'che'],
+#     [12345, 'alal', 50, 40, 55, 34, 73, 47],
+#     [67890, 'aro', 43, 65, 45, 51, 33, 63]
+# ]
+
+# while True:
+#     # Display the menu
+#     print("\n1. Login")
+#     print("2. Exit")
+#     choice = int(input("Enter your choice: "))
+
+#     if choice == 1:
+#         # User login
+#         reg = int(input("Enter register number: "))
+#         name = input("Enter name: ")
+        
+#         found = False
+#         for student in L:
+#             if reg == student[0] and name == student[1]:
+#                 found = True
+#                 print("You have successfully logged in.")
                 
-                L.append([reg, name, eng, mal, maths, bio, phy, che])
-                print(f"Student {name} added successfully!")
+#                 # Display student marks
+#                 print("\nYour results are:")
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+#                 print('_' * 70)
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+#                 break
+        
+#         if not found:
+#             print("ID or name not found.")
+    
+#     elif choice == 2:
+#         print("You have exited.")
+#         break
+    
+#     else:
+#         print("INVALID INPUT!")
+
+#     # Admin menu
+#     if reg == 000 and name == 'admin':
+#         while True:
+#             print("\nAdmin Menu:")
+#             print("1. Add student")
+#             print("2. View all students")
+#             print("3. Logout")
+#             admin_choice = int(input("Enter your choice: "))
             
-            elif admin_choice == 2:
-                # View all students
-                print("\nAll Students' Marks:")
-                print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
-                print('_' * 70)
-                for student in L[2:]:  # Skip the first two entries for the header and admin
-                    print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+#             if admin_choice == 1:
+#                 # Add a new student
+#                 reg = int(input("Enter register number: "))
+#                 name = input("Enter student name: ")
+#                 eng = int(input("Enter mark in English: "))
+#                 mal = int(input("Enter mark in Malayalam: "))
+#                 maths = int(input("Enter mark in Maths: "))
+#                 bio = int(input("Enter mark in Biology: "))
+#                 phy = int(input("Enter mark in Physics: "))
+#                 che = int(input("Enter mark in Chemistry: "))
+                
+#                 L.append([reg, name, eng, mal, maths, bio, phy, che])
+#                 print(f"Student {name} added successfully!")
             
-            elif admin_choice == 3:
-                print("Admin logged out.")
-                break
+#             elif admin_choice == 2:
+#                 # View all students
+#                 print("\nAll Students' Marks:")
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+#                 print('_' * 70)
+#                 for student in L[2:]:  # Skip the first two entries for the header and admin
+#                     print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
             
-            else:
-                print("Invalid choice. Please try again.")
+#             elif admin_choice == 3:
+#                 print("Admin logged out.")
+#                 break
+            
+#             else:
+#                 print("Invalid choice. Please try again.")
+
+
+
+
+
+
+
+
+# # # List of students and their marks
+# # L = [
+# #     [000, 'admin'],
+# #     ['reg', 'name', 'eng', 'mal', 'maths', 'bio', 'phy', 'che'],
+# #     [12345, 'alal', 50, 40, 55, 34, 73, 47],
+# #     [67890, 'aro', 43, 65, 45, 51, 33, 63]
+# # ]
+
+# # while True:
+# #     # Display the menu
+#     print("\n1. Login")
+#     print("2. Exit")
+#     choice = int(input("Enter your choice: "))
+
+#     if choice == 1:
+#         # User login
+#         reg = int(input("Enter register number: "))
+#         name = input("Enter name: ")
+        
+#         found = False
+#         for student in L:
+#             if reg == student[0] and name == student[1]:
+#                 found = True
+#                 print("You have successfully logged in.")
+                
+#                 # Display student marks
+#                 print("\nYour results are:")
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+#                 print('_' * 70)
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+#                 break
+        
+#         if not found:
+#             print("ID or name not found.")
+    
+#     elif choice == 2:
+#         print("You have exited.")
+#         break
+    
+#     else:
+#         print("INVALID INPUT!")
+
+#     # Admin menu
+#     if reg == 000 and name == 'admin':
+#         while True:
+#             print("\nAdmin Menu:")
+#             print("1. Add student")
+#             print("2. View all students")
+#             print("3. Logout")
+#             admin_choice = int(input("Enter your choice: "))
+            
+#             if admin_choice == 1:
+#                 # Add a new student
+#                 reg = int(input("Enter register number: "))
+#                 name = input("Enter student name: ")
+#                 eng = int(input("Enter mark in English: "))
+#                 mal = int(input("Enter mark in Malayalam: "))
+#                 maths = int(input("Enter mark in Maths: "))
+#                 bio = int(input("Enter mark in Biology: "))
+#                 phy = int(input("Enter mark in Physics: "))
+#                 che = int(input("Enter mark in Chemistry: "))
+                
+#                 L.append([reg, name, eng, mal, maths, bio, phy, che])
+#                 print(f"Student {name} added successfully!")
+            
+#             elif admin_choice == 2:
+#                 # View all students
+#                 print("\nAll Students' Marks:")
+#                 print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format("Register", "Name", "English", "Malayalam", "Maths", "Biology", "Physics", "Chemistry"))
+#                 print('_' * 70)
+#                 for student in L[2:]:  # Skip the first two entries for the header and admin
+#                     print("{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}{:<10}".format(student[0], student[1], student[2], student[3], student[4], student[5], student[6], student[7]))
+            
+#             elif admin_choice == 3:
+#                 print("Admin logged out.")
+#                 break
+            
+#             else:
+#                 print("Invalid choice. Please try again.")               
