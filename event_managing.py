@@ -1,6 +1,6 @@
 # Initialize dictionaries for storing user and event details
-users = {}
-events = {}
+users = []
+events = []
 
 # Registration and Login process
 while True:
@@ -16,7 +16,7 @@ while True:
             print("Username already exists. Try a different one.")
         else:
             password = input("Enter password: ")
-            users[username] = password
+            users[{username}] = password
             print("Registration successful!")
 
     elif choice == '2':
