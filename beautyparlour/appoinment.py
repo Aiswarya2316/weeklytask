@@ -1,4 +1,4 @@
-class Appointments:
+class appointments:
     def _init_(self):
         self.appointments = []
 

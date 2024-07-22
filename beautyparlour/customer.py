@@ -1,4 +1,4 @@
-class Customers:
+class customers:
     def _init_(self):
         self.customers = {}
 

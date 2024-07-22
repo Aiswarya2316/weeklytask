@@ -1,20 +1,22 @@
-from hair import HairServices 
-from skin import SkinServices 
-from nail import NailServices 
-import appoinment 
-import customer 
-import Billing 
+# main.py
+
+from hair import HairServices
+from skin import SkinServices
+from nail import NailServices
+from appoinment import Appointment
+from customer import Customer
+from billing import Billing
 
 def main():
     # Initialize service modules
-    hair_services = hair()
-    skin_services = skin()
-    nail_services = nail()
+    hair_services = HairServices()
+    skin_services = SkinServices()
+    nail_services = NailServices()
     
     # Initialize management modules
-    appointments = appoinment()
-    customers = customer()
-    billing = billing()
+    appointments = Appointment()
+    customers = Customer()
+    billing = Billing()
     
     # Sample data
     customers.add_customer('Alice', '1234567890')
@@ -31,5 +33,5 @@ def main():
     print("Appointments:", appointments.list_appointments())
     print("Bills:", billing.list_bills())
 
-if __name__== "_main_":
+if __name__ == "__main__":
     main()
