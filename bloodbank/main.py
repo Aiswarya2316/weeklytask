@@ -18,3 +18,14 @@ def main():
         elif choice == '2':
             view_donors()
         elif choice == '3':
+            update_donor()
+        elif choice == '4':
+            delete_donor()
+        elif choice == '5':
+            print("Exiting the system. Goodbye!")
+            break
+        else:
+            print("Invalid choice! Please try again.\n")
+
+if __name__ == "__main__":
+    main()
