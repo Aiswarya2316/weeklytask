@@ -1,9 +1,9 @@
-import hair 
-import skin 
-import nail 
+from hair import HairServices 
+from skin import SkinServices 
+from nail import NailServices 
 import appoinment 
 import customer 
-import billing 
+import Billing 
 
 def main():
     # Initialize service modules

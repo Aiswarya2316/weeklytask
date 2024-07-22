@@ -22,6 +22,24 @@ def view_donors():
     else:
         print("\nNo donors found!\n")
 
+def search_donors_by_name(name):
+    results = [donor for donor in donors if name.lower() in donor['name'].lower()]
+    return results
+
+def search_donors_by_blood_group(blood_group):
+    results = [donor for donor in donors if donor['blood_group'].lower() == blood_group.lower()]
+    return results
+
+def display_search_results(results):
+    if results:
+        print("\n{:<10} {:<20} {:<15} {:<15}".format("ID", "Name", "Blood Group", "Contact"))
+        print("-" * 60)
+        for donor in results:
+            print("{:<10} {:<20} {:<15} {:<15}".format(donor['id'], donor['name'], donor['blood_group'], donor['contact']))
+        print("")
+    else:
+        print("\nNo matching donors found!\n")        
+
 def update_donor():
     donor_id = input("Enter Donor ID to update: ")
     for donor in donors:
