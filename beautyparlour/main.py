@@ -3,8 +3,8 @@
 from hair import HairServices
 from skin import SkinServices
 from nail import NailServices
-from appoinment import Appointment
-from customer import Customer
+from appoinment import appointments
+from customer import customers
 from billing import Billing
 
 def main():
@@ -14,8 +14,8 @@ def main():
     nail_services = NailServices()
     
     # Initialize management modules
-    appointments = Appointment()
-    customers = Customer()
+    appoinment = appointments()
+    customer = customers()
     billing = Billing()
     
     # Sample data
