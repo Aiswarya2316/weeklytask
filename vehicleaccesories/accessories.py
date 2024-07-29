@@ -28,15 +28,3 @@ class AccessoryManager:
         else:
             for accessory_id, accessory in self.accessories.items():
                 print(f"ID: {accessory_id}, Name: {accessory.name}, Price: ${accessory.price}")
-
-    def borrow_accessory(self, user, accessory_id):
-        if accessory_id in self.accessories:
-            print(f"Accessory '{self.accessories[accessory_id].name}' borrowed by {user.username}.")
-        else:
-            print("Accessory ID not found.")
-
-    def return_accessory(self, user, accessory_id):
-        if accessory_id in self.accessories:
-            print(f"Accessory '{self.accessories[accessory_id].name}' returned by {user.username}.")
-        else:
-            print("Accessory ID not found.")

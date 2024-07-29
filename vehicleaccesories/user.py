@@ -17,7 +17,7 @@ class UserManager:
     def login_user(self, username, password):
         if username in self.users and self.users[username].password == password:
             print("Login successful.")
-            return self.users[username]
+            return True
         else:
             print("Invalid username or password.")
-            return None
+            return False
