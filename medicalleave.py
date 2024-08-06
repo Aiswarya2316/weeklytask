@@ -74,3 +74,26 @@ def delete_leave(leave_id):
     conn.commit()
     cursor.close()
     conn.close()
+def main():
+    while True:
+        print("\nMedical Leave Management System")
+        print("1. Add Leave Details")
+        print("2. Update Leave Details")
+        print("3. Delete Leave Details")
+        print("4. Exit")
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            add_leave()
+        elif choice == 2:
+            update_leave()
+        elif choice == 3:
+            delete_leave()
+        elif choice == 4:
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
